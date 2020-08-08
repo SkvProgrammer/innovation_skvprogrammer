@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>SkvProgrammer - We are towards Innovation</title>
+  </head>
+  <body>
+    <style>
+    .navbar-toggler{
+        box-shadow:none!important;
+        border:none!important;
+        outline:none!important;
+      }
+      @media(max-width:500px){
+        .navbar-brand{
+          width:50%!important;
+        }
+      }
+      body{
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+      }
+      h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h5 span {
+  background: #fff;
+  margin: 0 15px;
+}
+h5:before,
+h5:after {
+  background: black;
+  height: 1px;
+  flex: 1;
+  content: ' ';
+}
+h5.left:after {
+  background: none;
+}
+h5.right:before {
+  background: none;
+}
+
+.carousel-inner{
+     height: 100%;
+}
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width:1200px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  border-radius:1px!important;
+  /*padding: 0 10px;*/
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/ /* this adds the "card" effect */
+  /*padding: 16px;*/
+  text-align: center;
+  margin:20px;
+  /*background-color: #f1f1f1;*/
+  height:300px;
+
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: #f2f2f2;
+  color: black;
+  border:2px solid black;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 60px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+button:hover{
+  opacity:0.8;
+  background-color:lightgrey;
+  transition:1s ease-in-out;
+}
+
+.navbar-toggler{
+  border-radius:50px;
+  padding:10px;
+}
+img:hover{
+  opacity:0.8;
+  transition:1s opacity ease-in-out;
+  cursor:pointer;
+}
+
+    </style>
+   
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
+
+
+
+ <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="font-family: 'Yanone Kaffeesatz', sans-serif;font-size:25px;background-color:white;">
+  <img src="logo.png" class="img-fluid navbar-brand">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style="border:none!important;"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="border:none!important;">
+    <ul class="navbar-nav ml-auto" style="font-size:20px;word-spacing:20px;">
+      <li class="nav-item active ml-auto mr-auto">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ml-auto mr-auto">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item ml-auto mr-auto">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item ml-auto mr-auto">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+   <li class="nav-item ml-auto mr-auto">
+        <a class="nav-link" href="#">Project</i></a>
+      </li>
+      <li class="nav-item ml-auto mr-auto">
+        <a class="nav-link" href="#">Portfolio</i></a>
+      </li>
+      
+         </ul>
+  
+  </div>
+</nav>
+
+<h4 class="text-center mt-4">  Our Vision and Innovation is Our Strength  </h4>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="it2.jpg" style="width:100%;">
+  </div>
+
+  <div class="mySlides1">
+    <img src="ai.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="it.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<h4 class="text-center mt-4">  FEATURED ITEMS  </h4>
+
+ <div class="row container text-center ml-auto mr-auto">
+  <div class="column">
+    <div class="card"><img src="images9.jpg" style="height:300px;"></div>
+    <p>40$</p>
+      <button class="btn btn-default text-center ml-auto mr-auto mt-4 mb-5 pl-3 pr-3" style="border:2px solid black;border-radius:1px!important;">Buy Now</button><br>
+  </div>
+  <div class="column">
+    <div class="card"><img src="images10.jpg" style="height:300px;"></div>
+    <p>40$</p><button class="btn btn-default text-center ml-auto mr-auto mt-4 mb-5 pl-3 pr-3" style="border:2px solid black;border-radius:1px!important;">Buy Now</button><br>
+  </div>
+  <div class="column">
+    <div class="card"><img src="images12.jpg" style="height:300px;"></div>
+    <p>40$</p><button class="btn btn-default text-center ml-auto mr-auto mt-4 mb-5 pl-3 pr-3" style="border:2px solid black;border-radius:1px!important;">Buy Now</button><br>
+  </div>
+  <div class="column">
+    <div class="card"><img src="images13.jpg" style="height:300px;"></div>
+    <p>40$</p><button class="btn btn-default text-center ml-auto mr-auto mt-4 mb-5 pl-3 pr-3" style="border:2px solid black;border-radius:1px!important;">Buy Now</button>
+  </div>
+  <button class="btn btn-default text-center ml-auto mr-auto mt-4 mb-5 pl-5 pr-5" style="border:2px solid black;border-radius:1px!important;">More Apparels</button>
+</div> 
+
+
+
+
+
+
+
+
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a>Kids 2-5</a></li>
+              <li><a>Kids 5-9</a></li>
+              <li><a>T-Shirts</a></li>
+              <li><a>Shirts</a></li>
+              <li><a>Trousers</a></li>
+              <li><a>Jackets</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Contribute</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+         <a href="#">Mosaic Zawaam</a>.<p class="copyright-text">Designed By 
+         <a href="https://www.freelancer.in/u/prohackers">Satyam Kumar Verman</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+
+
+
+
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+   
+  </body>
+</html>
